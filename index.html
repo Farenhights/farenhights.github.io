@@ -3,105 +3,159 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Política de Privacidade - Fut Sinais</title>
+  <title>Fut Sinais</title>
+  <meta
+    name="description"
+    content="Fut Sinais - informações do aplicativo e acesso à Política de Privacidade."
+  />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6fb;
+      color: #1f2937;
       line-height: 1.6;
-      max-width: 900px;
+    }
+
+    .container {
+      max-width: 920px;
       margin: 0 auto;
-      padding: 40px 20px;
-      background: #f8f9fb;
-      color: #222;
+      padding: 32px 20px 56px;
     }
+
     .card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 32px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 32px 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     }
-    h1, h2 {
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
       color: #111827;
     }
-    h1 {
-      margin-top: 0;
-      font-size: 32px;
-    }
+
     h2 {
       margin-top: 28px;
-      font-size: 22px;
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+      color: #111827;
     }
+
     p, li {
-      font-size: 16px;
+      font-size: 1rem;
       color: #374151;
     }
-    .muted {
+
+    ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .subtitle {
       color: #6b7280;
       margin-bottom: 24px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #111827;
+    }
+
+    .actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      background: #1d4ed8;
+    }
+
+    .button.secondary {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .button.secondary:hover {
+      background: #d1d5db;
+    }
+
+    .footer {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid #e5e7eb;
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      .card {
+        padding: 24px 18px;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Política de Privacidade - Fut Sinais</h1>
-    <p class="muted"><strong>Última atualização:</strong> 20/03/2026</p>
+  <div class="container">
+    <div class="card">
+      <h1>Fut Sinais</h1>
+      <p class="subtitle">Informações oficiais do aplicativo</p>
 
-    <p>
-      O aplicativo <strong>Fut Sinais</strong> respeita sua privacidade e está comprometido com a proteção
-      dos dados dos usuários.
-    </p>
+      <p>
+        O <span class="highlight">Fut Sinais</span> é um aplicativo que disponibiliza
+        recursos, alertas e funcionalidades relacionados à experiência da plataforma,
+        respeitando a privacidade e a proteção dos dados dos usuários.
+      </p>
 
-    <h2>1. Dados que podemos coletar</h2>
-    <ul>
-      <li>Nome e e-mail, quando o usuário cria conta ou faz login;</li>
-      <li>Identificadores técnicos do dispositivo;</li>
-      <li>Informações de uso do aplicativo;</li>
-      <li>Dados relacionados ao plano ou assinatura contratada;</li>
-      <li>Token de notificação para envio de alertas e sinais.</li>
-    </ul>
+      <h2>Privacidade e proteção de dados</h2>
+      <p>
+        A privacidade dos usuários é tratada com seriedade. Para saber como os dados
+        podem ser coletados, utilizados, armazenados e excluídos, acesse a Política
+        de Privacidade oficial do aplicativo.
+      </p>
 
-    <h2>2. Como usamos esses dados</h2>
-    <ul>
-      <li>Permitir autenticação e acesso à conta;</li>
-      <li>Liberar funcionalidades conforme o plano contratado;</li>
-      <li>Enviar notificações e alertas do app;</li>
-      <li>Melhorar desempenho, segurança e experiência de uso;</li>
-      <li>Analisar falhas e uso geral da aplicação.</li>
-    </ul>
+      <div class="actions">
+        <a class="button" href="/privacy-policy.html">Ver Política de Privacidade</a>
+        <a class="button secondary" href="mailto:cireas31@gmail.com">Entrar em contato</a>
+      </div>
 
-    <h2>3. Compartilhamento de dados</h2>
-    <p>
-      Os dados poderão ser processados por serviços de terceiros utilizados para operação do app, como:
-      Firebase Authentication, Firebase Firestore, Firebase Cloud Messaging e Google Play Billing.
-    </p>
+      <h2>Contato</h2>
+      <p>
+        Para dúvidas, solicitações ou assuntos relacionados ao aplicativo
+        <strong>Fut Sinais</strong>, entre em contato pelo e-mail:
+        <strong>cireas31@gmail.com</strong>
+      </p>
 
-    <h2>4. Armazenamento e segurança</h2>
-    <p>
-      Adotamos medidas razoáveis de segurança para proteger as informações dos usuários contra acesso não autorizado,
-      alteração, divulgação ou destruição indevida.
-    </p>
-
-    <h2>5. Direitos do usuário</h2>
-    <p>
-      O usuário pode solicitar informações sobre seus dados ou pedir exclusão da conta e dos dados associados,
-      conforme aplicável.
-    </p>
-
-    <h2>6. Público-alvo</h2>
-    <p>
-      O aplicativo não é destinado a crianças menores de 13 anos.
-    </p>
-
-    <h2>7. Alterações nesta política</h2>
-    <p>
-      Esta Política de Privacidade poderá ser atualizada periodicamente. Recomendamos a revisão desta página com frequência.
-    </p>
-
-    <h2>8. Contato</h2>
-    <p>
-      Em caso de dúvidas sobre esta Política de Privacidade, entre em contato pelo e-mail:
-      <strong>cireas31@gmail.com</strong>
-    </p>
+      <div class="footer">
+        <p>Esta página refere-se exclusivamente ao aplicativo <strong>Fut Sinais</strong>.</p>
+      </div>
+    </div>
   </div>
 </body>
 </html>
