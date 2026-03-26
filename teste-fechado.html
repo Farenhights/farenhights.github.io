@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BL">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,8 +20,7 @@
       --shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
       --radius: 28px;
       --radius-md: 22px;
-      --radius-sm: 16px;
-      --max: 1160px;
+      --max: 1100px;
     }
 
     * { box-sizing: border-box; }
@@ -47,18 +46,19 @@
     }
 
     .container {
-      width: min(var(--max), calc(100% - 28px));
+      width: min(var(--max), calc(100% - 22px));
       margin: 0 auto;
     }
 
-    .hero {
-      padding: 28px 0 18px;
+    .hero,
+    .section,
+    .footer-wrap {
+      padding-top: 18px;
     }
 
     .hero-card,
     .section-card,
     .step-card,
-    .phone-card,
     .shot-card,
     .footer-card {
       background: var(--card);
@@ -69,12 +69,9 @@
     }
 
     .hero-card {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 26px;
       padding: 30px;
-      overflow: hidden;
       position: relative;
+      overflow: hidden;
     }
 
     .hero-card::after {
@@ -88,22 +85,15 @@
     .hero-copy {
       position: relative;
       z-index: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .brand-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 18px;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .brand-badge {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
       padding: 10px 16px;
       border-radius: 999px;
       background: rgba(124, 77, 255, 0.16);
@@ -111,37 +101,28 @@
       color: #e8e0ff;
       font-size: 14px;
       font-weight: 800;
-    }
-
-    .brand-mini {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      object-fit: contain;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 6px;
+      margin-bottom: 18px;
     }
 
     h1 {
       margin: 0 0 14px;
-      font-size: clamp(36px, 5vw, 60px);
-      line-height: 1.02;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.04;
       letter-spacing: -0.02em;
-      max-width: 680px;
     }
 
     .lead {
-      margin: 0;
+      margin: 0 auto;
       color: var(--muted);
       font-size: 18px;
       line-height: 1.7;
-      max-width: 700px;
+      max-width: 720px;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 12px;
       margin-top: 24px;
     }
@@ -154,7 +135,7 @@
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      transition: transform 0.15s ease, opacity 0.15s ease;
+      transition: transform 0.15s ease;
     }
 
     .btn:hover { transform: translateY(-1px); }
@@ -177,34 +158,39 @@
       line-height: 1.65;
     }
 
-    
+    .play-badge-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 22px;
+    }
 
-    .section {
-      padding: 16px 0;
+    .play-badge {
+      width: min(240px, 100%);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
     }
 
     .section-card {
-      padding: 26px;
+      padding: 24px;
     }
 
     .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
+      text-align: center;
       margin-bottom: 18px;
     }
 
     .section-head h2 {
-      margin: 0;
-      font-size: 30px;
+      margin: 0 0 10px;
+      font-size: 28px;
     }
 
     .section-head p {
-      margin: 0;
+      margin: 0 auto;
       color: var(--muted);
       line-height: 1.6;
-      max-width: 650px;
+      max-width: 680px;
     }
 
     .steps-grid {
@@ -231,252 +217,4 @@
       margin-bottom: 14px;
     }
 
-    .step-card h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
-    }
-
-    .step-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 15px;
-    }
-
-    .warning {
-      margin-top: 18px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: rgba(242, 194, 79, 0.10);
-      border: 1px solid rgba(242, 194, 79, 0.20);
-      color: #ffe39d;
-      line-height: 1.65;
-      font-size: 15px;
-    }
-
-    .preview-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(280px, 380px));
-      justify-content: center;
-      gap: 18px;
-    }
-
-    .shot-card {
-      padding: 16px;
-      background: var(--card-2);
-      border-radius: 24px;
-      max-width: 380px;
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    .shot-frame {
-      border-radius: 22px;
-      overflow: hidden;
-      background: #fff;
-      border: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-    }
-
-    .shot-caption {
-      margin-top: 12px;
-      color: #d7def7;
-      font-size: 15px;
-      font-weight: 700;
-    }
-
-    .cta-band {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 20px 22px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, rgba(124, 77, 255, 0.14), rgba(124, 77, 255, 0.06));
-      border: 1px solid rgba(124, 77, 255, 0.18);
-    }
-
-    .cta-band p {
-      margin: 0;
-      color: #e6e1ff;
-      font-size: 16px;
-      line-height: 1.6;
-      max-width: 700px;
-    }
-
-    .play-badge {
-      width: min(260px, 100%);
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.04);
-    }
-
-    .footer-card {
-      margin: 0 0 32px;
-      padding: 22px;
-      text-align: center;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .footer-card strong { color: white; }
-
-    @media (max-width: 980px) {
-      .hero-card,
-      .steps-grid,
-      .preview-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container {
-        width: min(var(--max), calc(100% - 18px));
-      }
-
-      .hero {
-        padding-top: 14px;
-      }
-
-      .hero-card,
-      .section-card,
-      .step-card,
-      .shot-card,
-      .footer-card {
-        border-radius: 22px;
-      }
-
-      h1 {
-        font-size: 42px;
-      }
-
-      .lead {
-        font-size: 16px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .section-head h2 {
-        font-size: 26px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <section class="hero">
-      <div class="hero-card">
-        <div class="hero-copy">
-          <div class="brand-row">
-            <img class="brand-mini" src="logo.png" alt="Logo Fut Sinais" />
-            <div class="brand-badge">Teste fechado • Fut Sinais</div>
-          </div>
-
-          <h1>Entre no teste e instale o app do jeito certo</h1>
-
-          <p class="lead">
-            Faça os dois passos pelo celular Android usando a mesma conta Google da Play Store. Primeiro entre no teste pela web. Depois abra o link de instalação no Android.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://play.google.com/apps/testing/br.com.devsphere.futsinais" target="_blank" rel="noopener noreferrer">1. Entrar no teste pelo celular</a>
-            <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=br.com.devsphere.futsinais" target="_blank" rel="noopener noreferrer">2. Instalar no Android</a>
-          </div>
-
-          <div class="hero-note">
-            Importante: abra os dois links no <strong>celular Android</strong> e use a <strong>mesma conta Google</strong> do aparelho.
-          </div>
-        </div>
-
-        </div>
-    </section>
-
-    <section class="section">
-      <div class="section-card">
-        <div class="section-head">
-          <div>
-            <h2>Como participar</h2>
-            <p>O processo é simples. Siga estes passos no seu Android para entrar no teste e instalar o app sem erro.</p>
-          </div>
-        </div>
-
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-number">1</div>
-            <h3>Abra no celular</h3>
-            <p>Abra esta página no seu celular Android usando a mesma conta Google da Play Store.</p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-number">2</div>
-            <h3>Entre no teste</h3>
-            <p>Toque em “Entrar no teste pelo celular” e, na página do Google Play, toque em “Become a tester”.</p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-number">3</div>
-            <h3>Instale o app</h3>
-            <p>Depois volte para esta página, toque em “Instalar no Android” e finalize a instalação pela Play Store.</p>
-          </div>
-        </div>
-
-        <div class="warning">
-          Se o app não aparecer para instalar, confirme se você está usando a conta Google correta e aguarde alguns minutos após entrar no teste.
-        </div>
-
-        <div class="cta-band">
-          <p>Depois de entrar no teste, use o link de instalação no Android para abrir a página oficial do app na Play Store.</p>
-          <div class="play-badge">
-            <img src="googleplay.png" alt="Disponível no Google Play" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-card">
-        <div class="section-head">
-          <div>
-            <h2>Veja o app</h2>
-            <p>Algumas telas do Fut Sinais para você reconhecer o app antes de instalar.</p>
-          </div>
-        </div>
-
-        <div class="preview-grid">
-          <div class="shot-card">
-            <div class="shot-frame">
-              <img src="screenshot-home.png" alt="Tela principal do Fut Sinais" />
-            </div>
-            <div class="shot-caption">Tela principal com sinais ao vivo</div>
-          </div>
-
-          <div class="shot-card">
-            <div class="shot-frame">
-              <img src="screenshot-detail.png" alt="Tela de detalhes do Fut Sinais" />
-            </div>
-            <div class="shot-caption">Detalhes da partida e sinais do jogo</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="footer-card">
-      <strong>Fut Sinais</strong><br />
-      Entre no teste pelo celular, confirme sua participação e instale o app pela Play Store.
-    </div>
-    
-  </div>
-</body>
-</html>
+    .step-card h
