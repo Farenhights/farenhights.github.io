@@ -223,7 +223,7 @@
 
     .section-head p {
       margin: 0 auto;
-      max-width: 700px;
+      max-width: 760px;
       color: var(--muted);
       line-height: 1.65;
     }
@@ -275,6 +275,18 @@
       text-align: center;
     }
 
+    .info-note {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #f4efff;
+      border: 1px solid #e5d8ff;
+      color: #5f27cd;
+      line-height: 1.65;
+      text-align: center;
+      font-weight: 600;
+    }
+
     .links-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -298,15 +310,6 @@
       margin: 0 0 16px;
       color: var(--muted);
       line-height: 1.65;
-    }
-
-    .link-url {
-      display: block;
-      word-break: break-word;
-      font-size: 13px;
-      color: #6b6b78;
-      margin-top: 10px;
-      line-height: 1.5;
     }
 
     .optin-grid {
@@ -348,6 +351,76 @@
       margin: 0;
       color: var(--muted);
       line-height: 1.65;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .feature-card {
+      background: #fbfbfd;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px;
+      height: 100%;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.3;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 20px;
+      align-items: center;
+      margin-top: 18px;
+    }
+
+    .image-card {
+      background: #fbfbfd;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 12px;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+    }
+
+    .text-card {
+      background: #fbfbfd;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .text-card h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    .text-card p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .text-card p:last-child {
+      margin-bottom: 0;
     }
 
     .screens-grid {
@@ -403,6 +476,39 @@
       background: #000;
     }
 
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .video-card {
+      background: #fbfbfd;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+      padding: 14px;
+    }
+
+    .video-card video {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      background: #000;
+    }
+
+    .video-card h3 {
+      margin: 14px 0 8px;
+      font-size: 20px;
+    }
+
+    .video-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
     .footer {
       margin-top: 18px;
       margin-bottom: 24px;
@@ -428,6 +534,9 @@
       .steps-grid,
       .links-grid,
       .optin-grid,
+      .feature-grid,
+      .two-col-grid,
+      .video-grid,
       .screens-grid {
         grid-template-columns: 1fr;
       }
@@ -464,7 +573,10 @@
       .step-card p,
       .warning,
       .link-card p,
-      .optin-card p {
+      .optin-card p,
+      .feature-card p,
+      .text-card p,
+      .video-card p {
         font-size: 15px;
       }
 
@@ -567,7 +679,6 @@
             <a class="btn btn-primary" href="https://play.google.com/apps/testing/br.com.devsphere.futsinais" target="_blank" rel="noopener noreferrer">
               Abrir link web
             </a>
-            <span class="link-url">https://play.google.com/apps/testing/br.com.devsphere.futsinais</span>
           </div>
 
           <div class="link-card">
@@ -576,7 +687,6 @@
             <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=br.com.devsphere.futsinais" target="_blank" rel="noopener noreferrer">
               Abrir app na Play Store
             </a>
-            <span class="link-url">https://play.google.com/store/apps/details?id=br.com.devsphere.futsinais</span>
           </div>
         </div>
       </div>
@@ -599,7 +709,7 @@
           <div class="optin-card">
             <div class="optin-step">2</div>
             <h3>Abra o link web do teste</h3>
-            <p>Toque no link “Become a tester” no próprio celular. Isso é o opt-in que ativa sua participação no teste fechado.</p>
+            <p>Toque no link “Become a tester” no próprio celular. Isso ativa sua participação no teste fechado.</p>
           </div>
 
           <div class="optin-card">
@@ -611,12 +721,118 @@
           <div class="optin-card">
             <div class="optin-step">4</div>
             <h3>Abra o link da Play Store e instale</h3>
-            <p>Depois do opt-in, abra o link do app Android na Play Store. A partir daí o botão de instalar deverá aparecer normalmente.</p>
+            <p>Depois da confirmação, abra o link do app Android na Play Store. A partir daí o botão de instalar deverá aparecer normalmente.</p>
           </div>
         </div>
 
         <div class="warning">
-          Importante: a ordem correta é <strong>primeiro fazer o opt-in no link web</strong> e <strong>só depois abrir o link do app na Play Store</strong>.
+          Importante: a ordem correta é <strong>primeiro confirmar no link web</strong> e <strong>só depois abrir o link do app na Play Store</strong>.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="funcionamento-app">
+      <div class="section-card">
+        <div class="section-head">
+          <h2>Como o app funciona no dia a dia</h2>
+          <p>O Fut Sinais foi pensado para ser simples de acompanhar. Você não precisa ficar configurando nada o tempo todo: o app monitora os jogos e mostra automaticamente os sinais encontrados na tela principal.</p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Monitoramento automático</h3>
+            <p>O app acompanha as partidas e atualiza a tela principal conforme novas oportunidades aparecem. Quando não há sinal no momento, ele apenas continua monitorando normalmente.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>Tela principal sempre atualizada</h3>
+            <p>Assim que um sinal fica disponível, ele aparece no aplicativo com as informações correspondentes. Você não precisa procurar manualmente nem atualizar a tela a todo momento.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>Experiência simples</h3>
+            <p>No uso comum, a ideia é abrir o app, acompanhar os jogos e deixar o sistema trabalhar. Quando não houver sinais, basta aguardar novas oportunidades surgirem.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="nenhum-sinal">
+      <div class="section-card">
+        <div class="section-head">
+          <h2>Quando aparece “Nenhum sinal agora”</h2>
+          <p>Essa tela significa apenas que, naquele momento, ainda não existe sinal disponível para exibição. O aplicativo continua monitorando os jogos e mostra automaticamente um sinal assim que ele surgir.</p>
+        </div>
+
+        <div class="two-col-grid">
+          <div class="image-card">
+            <img src="sem_sinal.png" alt="Tela do aplicativo mostrando nenhum sinal agora e aguardando oportunidades" />
+          </div>
+
+          <div class="text-card">
+            <h3>O usuário praticamente não precisa fazer nada</h3>
+            <p>Quando a tela mostra “Nenhum sinal agora” e “Aguardando oportunidades”, isso quer dizer que o sistema ainda está analisando e acompanhando as partidas normalmente.</p>
+            <p>Se um sinal relevante surgir, ele aparece direto na tela principal do app. Ou seja, você não precisa ficar buscando manualmente: basta acompanhar o aplicativo e aguardar novas oportunidades.</p>
+            <p>Além disso, sinais mais fortes também podem ser destacados com notificação, o que deixa o acompanhamento ainda mais simples.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="notificacoes">
+      <div class="section-card">
+        <div class="section-head">
+          <h2>Notificações do app</h2>
+          <p>As notificações foram pensadas para destacar apenas sinais com força mais relevante, evitando excesso de alertas e mantendo a experiência mais útil no dia a dia.</p>
+        </div>
+
+        <div class="two-col-grid">
+          <div class="video-wrap">
+            <video controls playsinline preload="metadata" poster="screenshot-home.png">
+              <source src="notificação_sinal.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeo em HTML5.
+            </video>
+          </div>
+
+          <div class="text-card">
+            <h3>Alertas a partir de 65% de força</h3>
+            <p>No Fut Sinais, as notificações aparecem para sinais com <strong>65% de força ou mais</strong>. A ideia é destacar somente o que realmente merece mais atenção.</p>
+            <p>Alertas abaixo desse nível não são enviados para evitar notificações excessivas e para manter o foco em oportunidades mais relevantes dentro do app.</p>
+            <p>No vídeo ao lado, você pode ver uma explicação prática de como esse comportamento funciona no uso real.</p>
+          </div>
+        </div>
+
+        <div class="info-note">
+          Resumo: o app continua monitorando sempre, mas as notificações são reservadas para sinais com <strong>65%+</strong>.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="acompanhamento-sinais">
+      <div class="section-card">
+        <div class="section-head">
+          <h2>Vídeos de acompanhamento dos sinais</h2>
+          <p>Aqui você pode mostrar exemplos práticos do acompanhamento em tempo real, desde o momento em que o sinal aparece no app até a evolução observada durante a partida.</p>
+        </div>
+
+        <div class="video-grid">
+          <div class="video-card">
+            <video controls playsinline preload="metadata" poster="screenshot-detail.png">
+              <source src="dinamarca_goleada.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeo em HTML5.
+            </video>
+            <h3>Exemplo de acompanhamento ao vivo</h3>
+            <p>Este vídeo pode ser usado para mostrar o surgimento do sinal no app, a leitura da partida e a forma como o acompanhamento acontece em tempo real dentro da proposta do Fut Sinais.</p>
+          </div>
+
+          <div class="video-card">
+            <video controls playsinline preload="metadata" poster="screenshot-home.png">
+              <source src="notificação_sinal.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeo em HTML5.
+            </video>
+            <h3>Exemplo de alerta por notificação</h3>
+            <p>Este vídeo reforça como o usuário recebe destaque quando aparece um sinal mais forte, ajudando a entender o fluxo do app de forma visual e prática.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -679,7 +895,7 @@
     <section class="footer">
       <div class="footer-card">
         <strong>Fut Sinais</strong><br />
-        Solicite acesso ao teste fechado, aguarde a liberação, faça o opt-in no link web e depois instale o app pela Play Store.
+        Solicite acesso ao teste fechado, aguarde a liberação, confirme sua entrada no teste e depois instale o app pela Play Store.
       </div>
     </section>
   </main>
