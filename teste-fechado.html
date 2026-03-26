@@ -154,6 +154,12 @@
       border: 1px solid #e5d8ff;
     }
 
+    .btn-outline {
+      background: #fff;
+      color: #5f27cd;
+      border: 1px solid #ddd1ff;
+    }
+
     .hero-note {
       margin-top: 14px;
       color: var(--muted);
@@ -264,6 +270,81 @@
       text-align: center;
     }
 
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .link-card {
+      background: #fbfbfd;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px;
+    }
+
+    .link-card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .link-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .link-url {
+      display: block;
+      word-break: break-word;
+      font-size: 13px;
+      color: #6b6b78;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .optin-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .optin-card {
+      background: #fbfbfd;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px;
+      height: 100%;
+    }
+
+    .optin-step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: #efe6ff;
+      color: #6a2dff;
+      font-weight: 800;
+      margin-bottom: 12px;
+      padding: 0 12px;
+    }
+
+    .optin-card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .optin-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
     .screens-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(180px, 220px));
@@ -340,6 +421,8 @@
     @media (max-width: 980px) {
       .hero-card-grid,
       .steps-grid,
+      .links-grid,
+      .optin-grid,
       .screens-grid {
         grid-template-columns: 1fr;
       }
@@ -374,7 +457,9 @@
       .hero p,
       .section-head p,
       .step-card p,
-      .warning {
+      .warning,
+      .link-card p,
+      .optin-card p {
         font-size: 15px;
       }
 
@@ -459,6 +544,74 @@
 
         <div class="warning">
           Se o app não aparecer para instalar, normalmente o e-mail ainda não foi liberado no teste ou o aparelho está usando outra conta Google na Play Store.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="links-teste">
+      <div class="section-card">
+        <div class="section-head">
+          <h2>Links oficiais do teste</h2>
+          <p>Depois que seu e-mail for liberado, use primeiro o link web para fazer o opt-in no teste. Em seguida, abra o link da Play Store para instalar o app.</p>
+        </div>
+
+        <div class="links-grid">
+          <div class="link-card">
+            <h3>Link web • Become a tester</h3>
+            <p>Use este link primeiro para entrar no teste fechado com a conta Google liberada.</p>
+            <a class="btn btn-primary" href="https://play.google.com/apps/testing/br.com.devsphere.futsinais" target="_blank" rel="noopener noreferrer">
+              Abrir link web
+            </a>
+            <span class="link-url">https://play.google.com/apps/testing/br.com.devsphere.futsinais</span>
+          </div>
+
+          <div class="link-card">
+            <h3>Link do app Android</h3>
+            <p>Depois de virar tester, abra este link para acessar a página do app na Play Store e instalar.</p>
+            <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=br.com.devsphere.futsinais" target="_blank" rel="noopener noreferrer">
+              Abrir app na Play Store
+            </a>
+            <span class="link-url">https://play.google.com/store/apps/details?id=br.com.devsphere.futsinais</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="passo-a-passo-optin">
+      <div class="section-card">
+        <div class="section-head">
+          <h2>Passo a passo após a liberação do e-mail</h2>
+          <p>Assim que o seu e-mail estiver aprovado no teste fechado, siga esta ordem para conseguir instalar normalmente.</p>
+        </div>
+
+        <div class="optin-grid">
+          <div class="optin-card">
+            <div class="optin-step">1</div>
+            <h3>Confirme a conta Google no celular</h3>
+            <p>Abra a Play Store e verifique se o Android está usando a mesma conta Google que foi enviada no formulário e liberada no teste.</p>
+          </div>
+
+          <div class="optin-card">
+            <div class="optin-step">2</div>
+            <h3>Abra o link web do teste</h3>
+            <p>Toque no link “Become a tester” no próprio celular. Isso é o opt-in que ativa sua participação no teste fechado.</p>
+          </div>
+
+          <div class="optin-card">
+            <div class="optin-step">3</div>
+            <h3>Toque em “Become a tester”</h3>
+            <p>Na página do Google Play, confirme sua entrada no teste fechado. Aguarde a tela indicar que você agora faz parte do teste.</p>
+          </div>
+
+          <div class="optin-card">
+            <div class="optin-step">4</div>
+            <h3>Abra o link da Play Store e instale</h3>
+            <p>Depois do opt-in, abra o link do app Android na Play Store. A partir daí o botão de instalar deverá aparecer normalmente.</p>
+          </div>
+        </div>
+
+        <div class="warning">
+          Importante: a ordem correta é <strong>primeiro fazer o opt-in no link web</strong> e <strong>só depois abrir o link do app na Play Store</strong>.
         </div>
       </div>
     </section>
@@ -550,7 +703,7 @@
     <section class="footer">
       <div class="footer-card">
         <strong>Fut Sinais</strong><br />
-        Solicite acesso ao teste fechado, aguarde a liberação e depois instale o app pela Play Store.
+        Solicite acesso ao teste fechado, aguarde a liberação, faça o opt-in no link web e depois instale o app pela Play Store.
       </div>
     </section>
   </main>
