@@ -217,4 +217,220 @@
       margin-bottom: 14px;
     }
 
-    .step-card h
+    .step-card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .step-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .warning {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(242, 194, 79, 0.10);
+      border: 1px solid rgba(242, 194, 79, 0.20);
+      color: #ffe39d;
+      line-height: 1.65;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(220px, 300px));
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .shot-card {
+      padding: 12px;
+      background: var(--card-2);
+      border-radius: 22px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .shot-frame {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+    }
+
+    .shot-frame img {
+      width: 100%;
+      height: auto;
+    }
+
+    .shot-caption {
+      margin-top: 10px;
+      color: #d7def7;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .footer-card {
+      margin-bottom: 26px;
+      padding: 20px;
+      text-align: center;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .footer-card strong { color: white; }
+
+    @media (max-width: 900px) {
+      .steps-grid,
+      .preview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-grid {
+        justify-items: center;
+      }
+
+      .shot-card {
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(var(--max), calc(100% - 16px));
+      }
+
+      .hero-card,
+      .section-card,
+      .step-card,
+      .shot-card,
+      .footer-card {
+        border-radius: 22px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .lead {
+        font-size: 16px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-copy">
+          <div class="brand-badge">Teste fechado • Fut Sinais</div>
+
+          <h1>Entre no teste e instale o app do jeito certo</h1>
+
+          <p class="lead">
+            Faça os dois passos pelo celular Android usando a mesma conta Google da Play Store. Primeiro entre no teste pela web. Depois abra o link de instalação no Android.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://play.google.com/apps/testing/br.com.devsphere.futsinais" target="_blank" rel="noopener noreferrer">1. Entrar no teste pelo celular</a>
+            <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=br.com.devsphere.futsinais" target="_blank" rel="noopener noreferrer">2. Instalar no Android</a>
+          </div>
+
+          <div class="hero-note">
+            Importante: abra os dois links no <strong>celular Android</strong> e use a <strong>mesma conta Google</strong> do aparelho.
+          </div>
+
+          <div class="play-badge-wrap">
+            <div class="play-badge">
+              <img src="googleplay.png" alt="Disponível no Google Play" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-card">
+        <div class="section-head">
+          <h2>Como participar</h2>
+          <p>O processo é simples. Siga estes passos no seu Android para entrar no teste e instalar o app sem erro.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Abra no celular</h3>
+            <p>Abra esta página no seu celular Android usando a mesma conta Google da Play Store.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Entre no teste</h3>
+            <p>Toque em “Entrar no teste pelo celular” e, na página do Google Play, toque em “Become a tester”.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Instale o app</h3>
+            <p>Depois volte para esta página, toque em “Instalar no Android” e finalize a instalação pela Play Store.</p>
+          </div>
+        </div>
+
+        <div class="warning">
+          Se o app não aparecer para instalar, confirme se você está usando a conta Google correta e aguarde alguns minutos após entrar no teste.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-card">
+        <div class="section-head">
+          <h2>Veja o app</h2>
+          <p>Algumas telas do Fut Sinais para você reconhecer o app antes de instalar.</p>
+        </div>
+
+        <div class="preview-grid">
+          <div class="shot-card">
+            <div class="shot-frame">
+              <img src="screenshot-home.png" alt="Tela principal do Fut Sinais" />
+            </div>
+            <div class="shot-caption">Tela principal com sinais ao vivo</div>
+          </div>
+
+          <div class="shot-card">
+            <div class="shot-frame">
+              <img src="screenshot-detail.png" alt="Tela de detalhes do Fut Sinais" />
+            </div>
+            <div class="shot-caption">Detalhes da partida e sinais do jogo</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-wrap">
+      <div class="footer-card">
+        <strong>Fut Sinais</strong><br />
+        Entre no teste pelo celular, confirme sua participação e instale o app pela Play Store.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
