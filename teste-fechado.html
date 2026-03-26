@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fut Sinais | Teste Fechado</title>
+  <style>
+    :root {
+      --bg: #0a1020;
+      --bg-2: #121936;
+      --card: rgba(255,255,255,0.08);
+      --stroke: rgba(255,255,255,0.12);
+      --text: #f5f7ff;
+      --muted: #b5bdd8;
+      --accent: #7c4dff;
+      --accent-2: #1dd1a1;
+      --accent-3: #f6c344;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(124,77,255,0.24), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(29,209,161,0.18), transparent 25%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      min-height: 100vh;
+    }
+
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 36px 20px 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(124,77,255,0.18);
+      border: 1px solid rgba(124,77,255,0.35);
+      color: #ddd3ff;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 54px);
+      margin: 0 0 12px;
+      line-height: 1.05;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 20px);
+      line-height: 1.6;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      border-radius: 16px;
+      padding: 15px 22px;
+      font-weight: 700;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #6135ff);
+      color: white;
+      box-shadow: 0 14px 30px rgba(124,77,255,0.25);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      border: 1px solid var(--stroke);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: 24px;
+      padding: 22px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+    }
+
+    .card h2, .card h3 {
+      margin-top: 0;
+    }
+
+    .steps {
+      counter-reset: item;
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .step::before {
+      counter-increment: item;
+      content: counter(item);
+      width: 28px;
+      height: 28px;
+      flex: 0 0 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(29,209,161,0.14);
+      color: var(--accent-2);
+      font-weight: 800;
+      font-size: 14px;
+      margin-top: 1px;
+    }
+
+    .callout {
+      margin-top: 26px;
+      background: rgba(246,195,68,0.10);
+      border: 1px solid rgba(246,195,68,0.22);
+      color: #ffe6a4;
+      border-radius: 18px;
+      padding: 16px 18px;
+      line-height: 1.55;
+    }
+
+    .fields {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: #d8def6;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 15px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      outline: none;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      margin-top: 8px;
+    }
+
+    .footer {
+      text-align: center;
+      color: #8f98bb;
+      font-size: 13px;
+      margin-top: 34px;
+    }
+
+    code.inline {
+      background: rgba(255,255,255,0.08);
+      padding: 3px 8px;
+      border-radius: 8px;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge">Teste fechado • Fut Sinais</div>
+      <h1>Instale o app em poucos passos</h1>
+      <p class="subtitle">
+        Entre no teste fechado do Fut Sinais pelo celular Android, usando a mesma conta Google da Play Store. Primeiro faça o opt-in pela web e, em seguida, abra o link de instalação no Android.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="SEU_LINK_WEB_DE_OPT_IN_AQUI" target="_blank" rel="noopener noreferrer">1. Entrar no teste pelo celular</a>
+        <a class="btn btn-secondary" href="SEU_LINK_ANDROID_DE_INSTALACAO_AQUI" target="_blank" rel="noopener noreferrer">2. Instalar no Android</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Como instalar</h2>
+        <div class="steps">
+          <div class="step">Abra esta página no seu celular Android. Faça os dois passos pelo celular.</div>
+          <div class="step">Toque em <strong>1. Entrar no teste pelo celular</strong> e faça login com a mesma conta Google usada na Play Store.</div>
+          <div class="step">Na página que abrir, toque em <strong>Become a tester</strong> para entrar no teste.</div>
+          <div class="step">Depois volte para esta página e toque em <strong>2. Instalar no Android</strong>.</div>
+          <div class="step">A Play Store abrirá no seu celular para você instalar o app.</div>
+        </div>
+        <div class="callout">
+          Atenção: os dois links devem ser abertos no celular Android. Use sempre a mesma conta Google do seu aparelho para participar do teste e instalar o app.
+        </div>
+      </div>
+
+      <div class="card" id="cadastro">
+        <h2>Cadastro rápido</h2>
+        <p class="hint">Você pode ligar estes campos a um Google Form, Formspree, Basin ou SheetMonkey depois.</p>
+        <div class="fields">
+          <div>
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" placeholder="Seu nome" />
+          </div>
+          <div>
+            <label for="email">E-mail da conta Google usada na Play Store</label>
+            <input id="email" type="email" placeholder="voce@gmail.com" />
+          </div>
+          <div>
+            <label for="whats">WhatsApp (opcional)</label>
+            <input id="whats" type="text" placeholder="(11) 99999-9999" />
+          </div>
+        </div>
+        <p class="hint">Se quiser publicar rápido sem backend, substitua este bloco por um botão apontando para um Google Form.</p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>O que trocar antes de publicar</h3>
+        <div class="steps">
+          <div class="step">Substitua <code class="inline">SEU_LINK_WEB_DE_OPT_IN_AQUI</code> pelo link de participar na Web e <code class="inline">SEU_LINK_ANDROID_DE_INSTALACAO_AQUI</code> pelo link de participar no Android.</div>
+          <div class="step">Adicione sua logo e, se quiser, um print do app.</div>
+          <div class="step">Troque o bloco de cadastro por um Google Form para receber os dados automaticamente.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Mensagem pronta para enviar</h3>
+        <p class="hint">
+          “Oi! Para instalar o Fut Sinais, abra esta página no seu celular Android com a mesma conta Google da Play Store. Primeiro entre no teste pelo link da Web e toque em Become a tester. Depois volte para a página e use o link de instalação no Android.”
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">
+      Página pronta para publicar no GitHub Pages.
+    </div>
+  </div>
+</body>
+</html>
