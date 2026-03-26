@@ -6,21 +6,19 @@
   <title>Fut Sinais | Teste Fechado</title>
   <style>
     :root {
-      --bg-1: #07101f;
-      --bg-2: #0d1730;
-      --card: rgba(19, 27, 46, 0.92);
-      --card-2: rgba(24, 33, 56, 0.95);
-      --stroke: rgba(255, 255, 255, 0.08);
-      --text: #f7f9ff;
-      --muted: #b9c3df;
-      --purple: #7c4dff;
-      --purple-2: #5e36ff;
-      --green: #2ad18b;
-      --yellow: #f2c24f;
-      --shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
-      --radius: 24px;
-      --radius-sm: 18px;
-      --max-width: 1080px;
+      --app-purple-1: #7b00ff;
+      --app-purple-2: #5f00ff;
+      --bg: #f2f2f5;
+      --surface: #ffffff;
+      --surface-2: #fafafa;
+      --border: #e6e6ea;
+      --text: #1f1f25;
+      --muted: #72727d;
+      --shadow: 0 8px 24px rgba(38, 38, 50, 0.08);
+      --radius-xl: 30px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max-width: 1120px;
     }
 
     * {
@@ -29,112 +27,112 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Inter, Arial, sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at top right, rgba(124, 77, 255, 0.18), transparent 28%),
-        radial-gradient(circle at bottom left, rgba(42, 209, 139, 0.10), transparent 24%),
-        linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
-      min-height: 100vh;
+      background: var(--bg);
     }
 
-    img {
+    img,
+    video {
       display: block;
       max-width: 100%;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     .container {
       width: min(var(--max-width), calc(100% - 20px));
       margin: 0 auto;
-      padding: 20px 0 28px;
+      padding: 16px 0 28px;
     }
 
-    .hero,
-    .section,
-    .footer {
-      margin-bottom: 18px;
+    .hero {
+      background: linear-gradient(180deg, var(--app-purple-1) 0%, var(--app-purple-2) 100%);
+      border-radius: 0 0 32px 32px;
+      padding: 28px 0 110px;
+      color: #fff;
     }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    .hero-shell {
+      width: min(var(--max-width), calc(100% - 20px));
+      margin: 0 auto;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hero-copy {
+      max-width: 780px;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.92);
     }
 
     .hero-card {
-      padding: 28px 22px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      width: min(var(--max-width), calc(100% - 20px));
+      margin: -82px auto 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 24px;
     }
 
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent 45%, rgba(124, 77, 255, 0.06) 100%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .badge {
-      display: inline-flex;
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
       align-items: center;
-      justify-content: center;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(124, 77, 255, 0.16);
-      border: 1px solid rgba(124, 77, 255, 0.28);
-      color: #e7dfff;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 18px;
     }
 
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(32px, 5vw, 54px);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-    }
-
-    .lead {
-      margin: 0 auto;
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .actions {
+    .hero-actions {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 24px;
+      margin-top: 20px;
     }
 
     .btn {
-      min-height: 52px;
-      padding: 14px 22px;
-      border-radius: 16px;
-      font-weight: 700;
+      min-height: 54px;
+      padding: 14px 20px;
+      border-radius: 18px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.15s ease;
+      font-weight: 800;
+      transition: transform 0.15s ease, opacity 0.15s ease;
     }
 
     .btn:hover {
@@ -142,253 +140,313 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--purple), var(--purple-2));
+      background: linear-gradient(180deg, #8d45ff 0%, #7641ff 100%);
       color: #fff;
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #fff;
+      background: #f4efff;
+      color: #5f27cd;
+      border: 1px solid #e5d8ff;
     }
 
-    .note {
-      margin-top: 16px;
-      color: #d8e1fb;
+    .hero-note {
+      margin-top: 14px;
+      color: var(--muted);
       font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .play-badge-wrap {
-      display: flex;
-      justify-content: center;
-      margin-top: 22px;
+      line-height: 1.65;
     }
 
     .play-badge {
-      width: min(240px, 100%);
-      border-radius: 14px;
+      width: min(260px, 100%);
+      border-radius: 16px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      background: #fff;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      margin-top: 18px;
+    }
+
+    .phone-preview {
+      max-width: 320px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 10px;
+      box-shadow: 0 10px 28px rgba(91, 59, 161, 0.10);
+    }
+
+    .phone-preview img {
+      border-radius: 20px;
+      width: 100%;
+      height: auto;
+    }
+
+    .section {
+      margin-top: 18px;
     }
 
     .section-card {
-      padding: 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 24px;
     }
 
     .section-head {
-      text-align: center;
       margin-bottom: 18px;
+      text-align: center;
     }
 
     .section-head h2 {
       margin: 0 0 10px;
       font-size: 28px;
+      line-height: 1.1;
     }
 
     .section-head p {
       margin: 0 auto;
-      max-width: 680px;
+      max-width: 700px;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    .steps {
+    .steps-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      gap: 16px;
     }
 
-    .step {
-      background: var(--card-2);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius-sm);
+    .step-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
       padding: 20px;
     }
 
     .step-number {
-      width: 34px;
-      height: 34px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: rgba(42, 209, 139, 0.16);
-      color: #7df0c8;
-      font-weight: 700;
+      background: #f0e8ff;
+      color: #6c2cff;
+      font-weight: 800;
       margin-bottom: 12px;
     }
 
-    .step h3 {
+    .step-card h3 {
       margin: 0 0 10px;
-      font-size: 19px;
+      font-size: 20px;
     }
 
-    .step p {
+    .step-card p {
       margin: 0;
       color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .warning {
       margin-top: 16px;
-      padding: 15px 16px;
-      border-radius: 16px;
-      background: rgba(242, 194, 79, 0.10);
-      border: 1px solid rgba(242, 194, 79, 0.20);
-      color: #ffe39d;
-      font-size: 15px;
-      line-height: 1.6;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #fff7e6;
+      border: 1px solid #f6df9f;
+      color: #6d5716;
+      line-height: 1.65;
       text-align: center;
     }
 
-    .screens {
+    .screens-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(220px, 280px));
+      grid-template-columns: repeat(4, minmax(180px, 220px));
       justify-content: center;
       gap: 16px;
     }
 
     .screen-card {
-      background: var(--card-2);
-      border: 1px solid var(--stroke);
-      border-radius: 20px;
-      padding: 12px;
+      background: #fbfbfd;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 10px;
     }
 
     .screen-frame {
-      border-radius: 16px;
-      overflow: hidden;
       background: #fff;
-      padding: 6px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      padding: 4px;
+    }
+
+    .screen-frame img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
     }
 
     .screen-caption {
       margin-top: 10px;
       text-align: center;
-      color: #d7def7;
       font-size: 14px;
       font-weight: 700;
+      color: #555564;
+      line-height: 1.45;
+    }
+
+    .video-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(38, 38, 50, 0.06);
+    }
+
+    .video-wrap video {
+      width: 100%;
+      height: auto;
+      background: #000;
+    }
+
+    .footer {
+      margin-top: 18px;
+      margin-bottom: 24px;
     }
 
     .footer-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
       padding: 18px;
       text-align: center;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .footer-card strong {
-      color: #fff;
+      color: var(--text);
     }
 
-    @media (max-width: 900px) {
-      .steps,
-      .screens {
+    @media (max-width: 980px) {
+      .hero-card-grid,
+      .steps-grid,
+      .screens-grid {
         grid-template-columns: 1fr;
       }
 
-      .screens {
+      .phone-preview {
+        max-width: 300px;
+      }
+
+      .screens-grid {
         justify-items: center;
       }
 
       .screen-card {
-        max-width: 280px;
         width: 100%;
+        max-width: 280px;
       }
     }
 
     @media (max-width: 640px) {
-      .container {
-        width: min(var(--max-width), calc(100% - 14px));
+      .hero {
+        border-radius: 0 0 24px 24px;
+        padding-bottom: 96px;
       }
 
       .hero-card,
       .section-card,
-      .step,
-      .screen-card,
       .footer-card {
-        border-radius: 20px;
+        border-radius: 22px;
+        padding: 18px;
       }
 
-      .lead {
-        font-size: 16px;
+      .hero p,
+      .section-head p,
+      .step-card p,
+      .warning {
+        font-size: 15px;
       }
 
-      .actions {
+      .hero-actions {
         flex-direction: column;
       }
 
       .btn {
         width: 100%;
       }
-
-      h1 {
-        font-size: 40px;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <header class="hero">
+    <div class="hero-shell">
+      <div class="hero-top">
+        <div class="hero-badge">Teste fechado • Fut Sinais</div>
+      </div>
 
-    <section class="hero">
-      <div class="card hero-card">
-        <div class="hero-content">
-          <div class="badge">Teste fechado • Fut Sinais</div>
+      <div class="hero-copy">
+        <h1>Entre no teste e instale o app do jeito certo</h1>
+        <p>
+          Faça os dois passos pelo celular Android usando a mesma conta Google da Play Store. Primeiro entre no teste pela web. Depois abra o link de instalação no Android.
+        </p>
+      </div>
+    </div>
+  </header>
 
-          <h1>Entre no teste e instale o app do jeito certo</h1>
+  <div class="hero-card">
+    <div class="hero-card-grid">
+      <div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://play.google.com/apps/testing/br.com.devsphere.futsinais" target="_blank" rel="noopener noreferrer">1. Entrar no teste pelo celular</a>
+          <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=br.com.devsphere.futsinais" target="_blank" rel="noopener noreferrer">2. Instalar no Android</a>
+        </div>
 
-          <p class="lead">
-            Faça os dois passos pelo celular Android usando a mesma conta Google da Play Store.
-            Primeiro entre no teste pela web. Depois abra o link de instalação no Android.
-          </p>
+        <div class="hero-note">
+          Importante: abra os dois links no <strong>celular Android</strong> e use a <strong>mesma conta Google</strong> do aparelho.
+        </div>
 
-          <div class="actions">
-            <a class="btn btn-primary" href="https://play.google.com/apps/testing/br.com.devsphere.futsinais" target="_blank" rel="noopener noreferrer">
-              1. Entrar no teste pelo celular
-            </a>
-
-            <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=br.com.devsphere.futsinais" target="_blank" rel="noopener noreferrer">
-              2. Instalar no Android
-            </a>
-          </div>
-
-          <div class="note">
-            Importante: abra os dois links no <strong>celular Android</strong> e use a <strong>mesma conta Google</strong> do aparelho.
-          </div>
-
-          <div class="play-badge-wrap">
-            <div class="play-badge">
-              <img src="googleplay.png" alt="Disponível no Google Play" />
-            </div>
-          </div>
+        <div class="play-badge">
+          <img src="googleplay.png" alt="Disponível no Google Play" />
         </div>
       </div>
-    </section>
 
+      <div>
+        <div class="phone-preview">
+          <img src="screenshot-home.png" alt="Tela principal do Fut Sinais" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
     <section class="section">
-      <div class="card section-card">
+      <div class="section-card">
         <div class="section-head">
           <h2>Como participar</h2>
           <p>O processo é simples. Siga estes passos no seu Android para entrar no teste e instalar o app sem erro.</p>
         </div>
 
-        <div class="steps">
-          <div class="step">
+        <div class="steps-grid">
+          <div class="step-card">
             <div class="step-number">1</div>
             <h3>Abra no celular</h3>
             <p>Abra esta página no seu celular Android usando a mesma conta Google da Play Store.</p>
           </div>
 
-          <div class="step">
+          <div class="step-card">
             <div class="step-number">2</div>
             <h3>Entre no teste</h3>
             <p>Toque em “Entrar no teste pelo celular” e, na página do Google Play, toque em “Become a tester”.</p>
           </div>
 
-          <div class="step">
+          <div class="step-card">
             <div class="step-number">3</div>
             <h3>Instale o app</h3>
             <p>Depois volte para esta página, toque em “Instalar no Android” e finalize a instalação pela Play Store.</p>
@@ -402,37 +460,66 @@
     </section>
 
     <section class="section">
-      <div class="card section-card">
+      <div class="section-card">
         <div class="section-head">
           <h2>Veja o app</h2>
           <p>Algumas telas do Fut Sinais para você reconhecer o app antes de instalar.</p>
         </div>
 
-        <div class="screens">
+        <div class="screens-grid">
           <div class="screen-card">
             <div class="screen-frame">
               <img src="screenshot-home.png" alt="Tela principal do Fut Sinais" />
             </div>
-            <div class="screen-caption">Tela principal com sinais ao vivo</div>
+            <div class="screen-caption">Tela principal</div>
           </div>
 
           <div class="screen-card">
             <div class="screen-frame">
               <img src="screenshot-detail.png" alt="Tela de detalhes do Fut Sinais" />
             </div>
-            <div class="screen-caption">Detalhes da partida e sinais do jogo</div>
+            <div class="screen-caption">Detalhes da partida</div>
+          </div>
+
+          <div class="screen-card">
+            <div class="screen-frame">
+              <img src="screenshot-detail-02.png" alt="Fluxo do método e estatísticas do jogo" />
+            </div>
+            <div class="screen-caption">Fluxo do método</div>
+          </div>
+
+          <div class="screen-card">
+            <div class="screen-frame">
+              <img src="screenshot-detail-03.png" alt="Estatísticas do jogo no Fut Sinais" />
+            </div>
+            <div class="screen-caption">Estatísticas do jogo</div>
           </div>
         </div>
       </div>
     </section>
 
+    <section class="section">
+      <div class="section-card">
+        <div class="section-head">
+          <h2>Vídeo explicativo</h2>
+          <p>Veja um exemplo da Fut Sinais explicando a leitura das análises e o funcionamento das telas.</p>
+        </div>
+
+        <div class="video-wrap">
+          <video controls playsinline preload="metadata" poster="screenshot-home.png">
+            <source src="futsinais_03.mp4" type="video/mp4" />
+            Seu navegador não suporta vídeo em HTML5.
+          </video>
+        </div>
+      </div>
+    </section>
+
     <section class="footer">
-      <div class="card footer-card">
+      <div class="footer-card">
         <strong>Fut Sinais</strong><br />
         Entre no teste pelo celular, confirme sua participação e instale o app pela Play Store.
       </div>
     </section>
-
-  </div>
+  </main>
 </body>
 </html>
