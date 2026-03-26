@@ -6,72 +6,116 @@
   <title>Fut Sinais | Teste Fechado</title>
   <style>
     :root {
-      --bg: #0a1020;
-      --bg-2: #121936;
-      --card: rgba(255,255,255,0.08);
-      --stroke: rgba(255,255,255,0.12);
+      --bg: #09111f;
+      --bg-2: #111a35;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-strong: rgba(255, 255, 255, 0.1);
+      --stroke: rgba(255, 255, 255, 0.12);
       --text: #f5f7ff;
-      --muted: #b5bdd8;
-      --accent: #7c4dff;
-      --accent-2: #1dd1a1;
-      --accent-3: #f6c344;
+      --muted: #b7c0dc;
+      --purple: #7c4dff;
+      --purple-soft: rgba(124, 77, 255, 0.18);
+      --green: #20d59a;
+      --yellow: #f4c64b;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+      --radius: 26px;
+      --radius-sm: 18px;
+      --max: 1120px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
       font-family: Inter, Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top right, rgba(124,77,255,0.24), transparent 30%),
-        radial-gradient(circle at bottom left, rgba(29,209,161,0.18), transparent 25%),
+        radial-gradient(circle at top right, rgba(124, 77, 255, 0.3), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(32, 213, 154, 0.16), transparent 24%),
         linear-gradient(180deg, var(--bg), var(--bg-2));
-      min-height: 100vh;
     }
 
-    .wrap {
-      max-width: 960px;
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
-      padding: 32px 20px 64px;
     }
 
     .hero {
-      text-align: center;
-      padding: 36px 20px 20px;
+      padding: 34px 0 26px;
     }
 
-    .badge {
-      display: inline-block;
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .hero-copy,
+    .hero-brand,
+    .card,
+    .shot,
+    .footer-box {
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-copy {
+      padding: 34px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(124,77,255,0.18);
-      border: 1px solid rgba(124,77,255,0.35);
-      color: #ddd3ff;
+      background: var(--purple-soft);
+      border: 1px solid rgba(124, 77, 255, 0.4);
+      color: #e2d9ff;
       font-size: 13px;
-      letter-spacing: 0.3px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
       margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(30px, 5vw, 54px);
-      margin: 0 0 12px;
-      line-height: 1.05;
+      margin: 0 0 14px;
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.03;
     }
 
-    .subtitle {
-      max-width: 720px;
-      margin: 0 auto 28px;
+    .lead {
+      margin: 0;
       color: var(--muted);
-      font-size: clamp(16px, 2vw, 20px);
-      line-height: 1.6;
+      font-size: 18px;
+      line-height: 1.65;
+      max-width: 650px;
     }
 
-    .cta-row {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      justify-content: center;
+      margin-top: 26px;
     }
 
     .btn {
@@ -79,203 +123,356 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      text-decoration: none;
+      min-height: 54px;
+      padding: 14px 22px;
       border-radius: 16px;
-      padding: 15px 22px;
-      font-weight: 700;
+      text-decoration: none;
+      font-weight: 800;
       transition: transform 0.15s ease, opacity 0.15s ease;
     }
 
-    .btn:hover { transform: translateY(-1px); }
+    .btn:hover {
+      transform: translateY(-1px);
+    }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #6135ff);
+      background: linear-gradient(135deg, var(--purple), #5a2eff);
       color: white;
-      box-shadow: 0 14px 30px rgba(124,77,255,0.25);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
       border: 1px solid var(--stroke);
+      color: white;
     }
 
-    .grid {
+    .hint-row {
+      margin-top: 16px;
+      color: #dce2fb;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .hero-brand {
+      padding: 18px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      margin-top: 34px;
+      gap: 14px;
+    }
+
+    .brand-top {
+      border-radius: 22px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .brand-top img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-bottom {
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      min-height: 220px;
+    }
+
+    .brand-bottom img {
+      max-height: 220px;
+      object-fit: contain;
+    }
+
+    .section {
+      padding: 10px 0 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: var(--card);
-      border: 1px solid var(--stroke);
-      border-radius: 24px;
-      padding: 22px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+      padding: 28px;
     }
 
-    .card h2, .card h3 {
-      margin-top: 0;
+    .card h2,
+    .card h3 {
+      margin: 0 0 14px;
+      font-size: 28px;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
     }
 
     .steps {
-      counter-reset: item;
       display: grid;
-      gap: 12px;
-      margin-top: 12px;
+      gap: 14px;
+      margin-top: 18px;
     }
 
     .step {
-      display: flex;
+      display: grid;
+      grid-template-columns: 34px 1fr;
       gap: 14px;
-      align-items: flex-start;
+      align-items: start;
       color: var(--muted);
-      line-height: 1.55;
+      line-height: 1.65;
     }
 
-    .step::before {
-      counter-increment: item;
-      content: counter(item);
-      width: 28px;
-      height: 28px;
-      flex: 0 0 28px;
+    .step .num {
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: rgba(29,209,161,0.14);
-      color: var(--accent-2);
+      background: rgba(32, 213, 154, 0.16);
+      color: #7bf0cb;
       font-weight: 800;
       font-size: 14px;
-      margin-top: 1px;
+      margin-top: 2px;
     }
 
-    .callout {
-      margin-top: 26px;
-      background: rgba(246,195,68,0.10);
-      border: 1px solid rgba(246,195,68,0.22);
-      color: #ffe6a4;
-      border-radius: 18px;
+    .highlight {
+      margin-top: 18px;
       padding: 16px 18px;
-      line-height: 1.55;
+      border-radius: 18px;
+      background: rgba(244, 198, 75, 0.12);
+      border: 1px solid rgba(244, 198, 75, 0.24);
+      color: #ffe6a0;
+      line-height: 1.6;
     }
 
-    .fields {
+    .gallery-title {
+      margin: 0 0 18px;
+      font-size: 30px;
+    }
+
+    .shots {
       display: grid;
-      gap: 14px;
-      margin-top: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
     }
 
-    label {
-      display: block;
-      font-size: 14px;
-      margin-bottom: 8px;
-      color: #d8def6;
+    .shot {
+      padding: 16px;
     }
 
-    input {
+    .shot img {
       width: 100%;
-      padding: 14px 15px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
-      outline: none;
+      border-radius: 22px;
+      background: #fff;
     }
 
-    .hint {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-      margin-top: 8px;
+    .shot span {
+      display: block;
+      margin-top: 12px;
+      color: #d6def9;
+      font-size: 15px;
+      font-weight: 700;
     }
 
-    .footer {
+    .play-box {
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .play-box img {
+      max-width: 320px;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    .footer-box {
+      margin: 24px auto 38px;
+      padding: 22px 24px;
       text-align: center;
-      color: #8f98bb;
-      font-size: 13px;
-      margin-top: 34px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .footer-box strong {
+      color: white;
+    }
+
+    .small {
+      font-size: 14px;
     }
 
     code.inline {
       background: rgba(255,255,255,0.08);
       padding: 3px 8px;
       border-radius: 8px;
-      color: #ffffff;
+      color: #fff;
+    }
+
+    @media (max-width: 920px) {
+      .hero-wrap,
+      .grid-2,
+      .shots {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy,
+      .card {
+        padding: 24px;
+      }
+
+      .brand-bottom {
+        min-height: 180px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(var(--max), calc(100% - 20px));
+      }
+
+      .hero {
+        padding-top: 18px;
+      }
+
+      .hero-copy,
+      .card,
+      .hero-brand,
+      .shot,
+      .footer-box {
+        border-radius: 22px;
+      }
+
+      .lead {
+        font-size: 16px;
+      }
+
+      .btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="container">
     <section class="hero">
-      <div class="badge">Teste fechado • Fut Sinais</div>
-      <h1>Instale o app em poucos passos</h1>
-      <p class="subtitle">
-        Entre no teste fechado do Fut Sinais pelo celular Android, usando a mesma conta Google da Play Store. Primeiro faça o opt-in pela web e, em seguida, abra o link de instalação no Android.
-      </p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="https://play.google.com/apps/testing/br.com.devsphere.futsinais" target="_blank" rel="noopener noreferrer">1. Entrar no teste pelo celular</a>
-        <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=br.com.devsphere.futsinais" target="_blank" rel="noopener noreferrer">2. Instalar no Android</a>
+      <div class="hero-wrap">
+        <div class="hero-copy">
+          <div class="tag">Teste fechado • Fut Sinais</div>
+          <h1>Entre no teste e instale o app do jeito certo</h1>
+          <p class="lead">
+            Faça os dois passos pelo celular Android usando a mesma conta Google da Play Store. Primeiro entre no teste pela web. Depois abra o link de instalação no Android.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="SEU_LINK_WEB_DE_OPT_IN_AQUI" target="_blank" rel="noopener noreferrer">1. Entrar no teste pelo celular</a>
+            <a class="btn btn-secondary" href="SEU_LINK_ANDROID_DE_INSTALACAO_AQUI" target="_blank" rel="noopener noreferrer">2. Instalar no Android</a>
+          </div>
+
+          <div class="hint-row">
+            Importante: abra os dois links no <strong>celular Android</strong> e use a <strong>mesma conta Google</strong> do aparelho.
+          </div>
+
+          <div class="play-box">
+            <img src="googleplay.png" alt="Disponível no Google Play" />
+          </div>
+        </div>
+
+        <div class="hero-brand">
+          <div class="brand-top">
+            <img src="logo2.png" alt="Tela e identidade Fut Sinais" />
+          </div>
+          <div class="brand-bottom">
+            <img src="logo.png" alt="Logo Fut Sinais" />
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="grid">
+    <section class="section grid-2">
       <div class="card">
-        <h2>Como instalar</h2>
+        <h2>Como participar</h2>
         <div class="steps">
-          <div class="step">Abra esta página no seu celular Android. Faça os dois passos pelo celular.</div>
-          <div class="step">Toque em <strong>1. Entrar no teste pelo celular</strong> e faça login com a mesma conta Google usada na Play Store.</div>
-          <div class="step">Na página que abrir, toque em <strong>Become a tester</strong> para entrar no teste.</div>
-          <div class="step">Depois volte para esta página e toque em <strong>2. Instalar no Android</strong>.</div>
-          <div class="step">A Play Store abrirá no seu celular para você instalar o app.</div>
+          <div class="step">
+            <div class="num">1</div>
+            <div>Abra esta página no seu <strong>celular Android</strong>.</div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>Toque em <strong>Entrar no teste pelo celular</strong> e faça login com a mesma conta Google usada na Play Store.</div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div>Na página que abrir, toque em <strong>Become a tester</strong> para entrar no teste.</div>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <div>Volte para esta página e toque em <strong>Instalar no Android</strong>.</div>
+          </div>
+          <div class="step">
+            <div class="num">5</div>
+            <div>A Play Store abrirá no seu celular para instalar o app.</div>
+          </div>
         </div>
-        <div class="callout">
-          Atenção: os dois links devem ser abertos no celular Android. Use sempre a mesma conta Google do seu aparelho para participar do teste e instalar o app.
+
+        <div class="highlight">
+          Se o app não aparecer para instalar, confirme se você está usando a conta Google correta e aguarde alguns minutos após entrar no teste.
         </div>
       </div>
 
-      <div class="card" id="cadastro">
-        <h2>Cadastro rápido</h2>
-        <p class="hint">Você pode ligar estes campos a um Google Form, Formspree, Basin ou SheetMonkey depois.</p>
-        <div class="fields">
-          <div>
-            <label for="nome">Nome</label>
-            <input id="nome" type="text" placeholder="Seu nome" />
-          </div>
-          <div>
-            <label for="email">E-mail da conta Google usada na Play Store</label>
-            <input id="email" type="email" placeholder="voce@gmail.com" />
-          </div>
-          <div>
-            <label for="whats">WhatsApp (opcional)</label>
-            <input id="whats" type="text" placeholder="(11) 99999-9999" />
-          </div>
-        </div>
-        <p class="hint">Se quiser publicar rápido sem backend, substitua este bloco por um botão apontando para um Google Form.</p>
-      </div>
-    </section>
-
-    <section class="grid">
       <div class="card">
-        <h3>O que trocar antes de publicar</h3>
+        <h2>Antes de publicar</h2>
         <div class="steps">
-          <div class="step">Substitua <code class="inline">https://play.google.com/apps/testing/br.com.devsphere.futsinais</code> pelo link de participar na Web e <code class="inline">https://play.google.com/store/apps/details?id=br.com.devsphere.futsinais</code> pelo link de participar no Android.</div>
-          <div class="step">Adicione sua logo e, se quiser, um print do app.</div>
-          <div class="step">Troque o bloco de cadastro por um Google Form para receber os dados automaticamente.</div>
+          <div class="step">
+            <div class="num">1</div>
+            <div>Troque <code class="inline">SEU_LINK_WEB_DE_OPT_IN_AQUI</code> pelo link de <strong>Participar na Web</strong>.</div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>Troque <code class="inline">SEU_LINK_ANDROID_DE_INSTALACAO_AQUI</code> pelo link de <strong>Participar no Android</strong>.</div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div>Envie para o GitHub os arquivos <code class="inline">logo.png</code>, <code class="inline">logo2.png</code>, <code class="inline">googleplay.png</code>, <code class="inline">screenshot-home.png</code> e <code class="inline">screenshot-detail.png</code>.</div>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <div>Publique esta página como <code class="inline">teste-fechado.html</code> no seu repositório do GitHub Pages.</div>
+          </div>
         </div>
-      </div>
-
-      <div class="card">
-        <h3>Mensagem pronta para enviar</h3>
-        <p class="hint">
-          “Oi! Para instalar o Fut Sinais, abra esta página no seu celular Android com a mesma conta Google da Play Store. Primeiro entre no teste pelo link da Web e toque em Become a tester. Depois volte para a página e use o link de instalação no Android.”
-        </p>
       </div>
     </section>
 
-    <div class="footer">
-      Página pronta para publicar no GitHub Pages.
+    <section class="section">
+      <div class="card">
+        <h2 class="gallery-title">Veja o app</h2>
+        <div class="shots">
+          <div class="shot">
+            <img src="screenshot-home.png" alt="Tela principal do Fut Sinais" />
+            <span>Tela principal com sinais ao vivo</span>
+          </div>
+          <div class="shot">
+            <img src="screenshot-detail.png" alt="Tela de detalhes do Fut Sinais" />
+            <span>Detalhes da partida e sinais do jogo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-box small">
+      <strong>Fut Sinais</strong><br />
+      Entre no teste pelo celular, confirme sua participação e instale o app pela Play Store.
     </div>
   </div>
 </body>
