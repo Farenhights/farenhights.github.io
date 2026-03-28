@@ -141,7 +141,7 @@
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      transition: transform 0.15s ease, opacity 0.15s ease;
+      transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
     }
 
     .btn:hover {
@@ -518,6 +518,147 @@
       line-height: 1.65;
     }
 
+    .relato-carousel {
+      position: relative;
+      padding: 0 52px;
+    }
+
+    .relatos-scroll {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding: 6px 2px 10px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: #9f74ff #ececf2;
+    }
+
+    .relatos-scroll::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .relatos-scroll::-webkit-scrollbar-track {
+      background: #ececf2;
+      border-radius: 999px;
+    }
+
+    .relatos-scroll::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, #c8b3ff 0%, #9f74ff 100%);
+      border-radius: 999px;
+    }
+
+    .relato-card {
+      flex: 0 0 360px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(249,247,255,0.98) 100%);
+      border: 1px solid #e9defd;
+      border-radius: 26px;
+      padding: 14px;
+      scroll-snap-align: start;
+      box-shadow: 0 10px 28px rgba(72, 34, 135, 0.08), inset 0 1px 0 rgba(255,255,255,0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .relato-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: linear-gradient(90deg, #7b00ff 0%, #9b4dff 50%, #5f00ff 100%);
+    }
+
+    .relato-media {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid rgba(123, 0, 255, 0.10);
+      box-shadow: 0 8px 20px rgba(18, 18, 30, 0.10);
+    }
+
+    .relato-media video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .relato-card h3 {
+      margin: 14px 0 10px;
+      font-size: 22px;
+      line-height: 1.28;
+      letter-spacing: -0.02em;
+      color: #221a35;
+    }
+
+    .relato-card p {
+      margin: 0;
+      color: #6e6b7c;
+      line-height: 1.72;
+      font-size: 15px;
+    }
+
+    .relato-highlight {
+      margin-top: 14px;
+      padding: 14px 15px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #f6f1ff 100%);
+      border: 1px solid #eadfff;
+    }
+
+    .relato-highlight strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #4d22a8;
+      font-size: 14px;
+    }
+
+    .relato-highlight span {
+      display: block;
+      color: #6e6b7c;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .relato-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border: 1px solid #ded0ff;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #ffffff 0%, #f7f2ff 100%);
+      color: #6b31ff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 800;
+      cursor: pointer;
+      z-index: 2;
+      box-shadow: 0 8px 20px rgba(72, 34, 135, 0.14);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .relato-nav:hover {
+      transform: translateY(-50%) scale(1.04);
+      box-shadow: 0 12px 26px rgba(72, 34, 135, 0.18);
+      background: linear-gradient(180deg, #ffffff 0%, #efe3ff 100%);
+    }
+
+    .relato-nav-left {
+      left: 0;
+    }
+
+    .relato-nav-right {
+      right: 0;
+    }
+
     .footer {
       margin-top: 18px;
       margin-bottom: 24px;
@@ -564,6 +705,16 @@
       }
     }
 
+    @media (max-width: 768px) {
+      .relato-carousel {
+        padding: 0;
+      }
+
+      .relato-nav {
+        display: none;
+      }
+    }
+
     @media (max-width: 640px) {
       .hero {
         border-radius: 0 0 24px 24px;
@@ -595,6 +746,15 @@
 
       .btn {
         width: 100%;
+      }
+
+      .relato-card {
+        flex: 0 0 86%;
+        border-radius: 22px;
+      }
+
+      .relato-card h3 {
+        font-size: 20px;
       }
     }
   </style>
@@ -849,6 +1009,102 @@
       </div>
     </section>
 
+    <section class="section" id="relatos-dos-jogos">
+      <div class="section-card">
+        <div class="section-head">
+          <h2>Relatos dos jogos</h2>
+          <p>
+            Uma área para mostrar análises práticas, leituras feitas durante a partida e exemplos reais de acompanhamento dentro da proposta do Fut Sinais.
+          </p>
+        </div>
+
+        <div class="relato-carousel">
+          <button
+            class="relato-nav relato-nav-left"
+            type="button"
+            aria-label="Ver relatos anteriores"
+            onclick="scrollRelatos(-1)"
+          >
+            ‹
+          </button>
+
+          <div class="relatos-scroll" id="relatosScroll">
+            <article class="relato-card">
+              <div class="relato-media">
+                <video controls playsinline preload="metadata" poster="dinamarca.jpeg">
+                  <source src="dinamarca_goleada.mp4" type="video/mp4" />
+                  Seu navegador não suporta vídeo em HTML5.
+                </video>
+              </div>
+
+              <h3>Dinamarca x Macedônia • Busca da goleada da Dinamarca</h3>
+              <p>
+                Nesta leitura, o cenário da partida favorecia uma postura ofensiva forte da Dinamarca, com expectativa de continuidade de pressão e construção de um placar mais amplo ao longo do jogo.
+              </p>
+
+              <div class="relato-highlight">
+                <strong>Resumo da leitura</strong>
+                <span>
+                  Foi um excelente exemplo de análise prática, com confirmação de goleada da Dinamarca e evolução para cenário de 3 gols e também 3.5+.
+                </span>
+              </div>
+            </article>
+
+            <article class="relato-card">
+              <div class="relato-media">
+                <video controls playsinline preload="metadata" poster="logo2.png">
+                  <source src="bolivia_suriname.mp4" type="video/mp4" />
+                  Seu navegador não suporta vídeo em HTML5.
+                </video>
+              </div>
+
+              <h3>Bolívia x Suriname • Leitura de desenvolvimento da partida</h3>
+              <p>
+                Exemplo adicional para mostrar como um acompanhamento pode ser documentado em formato de relato, com foco no contexto do sinal, no comportamento do jogo ao vivo e na evolução observada.
+              </p>
+
+              <div class="relato-highlight">
+                <strong>Resumo da leitura</strong>
+                <span>
+                  Espaço ideal para explicar o raciocínio da entrada, os sinais observados e como a partida respondeu à expectativa inicial.
+                </span>
+              </div>
+            </article>
+
+            <article class="relato-card">
+              <div class="relato-media">
+                <video controls playsinline preload="metadata" poster="img_push.png">
+                  <source src="notificacao_sinal.mp4" type="video/mp4" />
+                  Seu navegador não suporta vídeo em HTML5.
+                </video>
+              </div>
+
+              <h3>Título do próximo relato</h3>
+              <p>
+                Card pronto para você reutilizar quando quiser adicionar uma nova análise, destacando vídeo, contexto do jogo, raciocínio da leitura e resultado observado.
+              </p>
+
+              <div class="relato-highlight">
+                <strong>Resumo da leitura</strong>
+                <span>
+                  Use este espaço para destacar de forma curta o ponto principal da análise e o que tornou aquele jogo interessante.
+                </span>
+              </div>
+            </article>
+          </div>
+
+          <button
+            class="relato-nav relato-nav-right"
+            type="button"
+            aria-label="Ver próximos relatos"
+            onclick="scrollRelatos(1)"
+          >
+            ›
+          </button>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="section-card">
         <div class="section-head">
@@ -895,5 +1151,22 @@
       </div>
     </section>
   </main>
+
+  <script>
+    function scrollRelatos(direction) {
+      const track = document.getElementById("relatosScroll");
+      if (!track) return;
+
+      const firstCard = track.querySelector(".relato-card");
+      const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : 360;
+      const gap = 18;
+      const scrollAmount = cardWidth + gap;
+
+      track.scrollBy({
+        left: direction * scrollAmount,
+        behavior: "smooth"
+      });
+    }
+  </script>
 </body>
 </html>
