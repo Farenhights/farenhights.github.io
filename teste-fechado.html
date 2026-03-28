@@ -479,48 +479,6 @@
       background: #000;
     }
 
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .video-card {
-      background: #fbfbfd;
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      overflow: hidden;
-      padding: 14px;
-    }
-
-    .video-media {
-      width: 100%;
-      aspect-ratio: 9 / 16;
-      border-radius: 16px;
-      overflow: hidden;
-      background: #000;
-    }
-
-    .video-media video {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: contain;
-      background: #000;
-    }
-
-    .video-card h3 {
-      margin: 14px 0 8px;
-      font-size: 20px;
-    }
-
-    .video-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
     .relato-carousel {
       position: relative;
       padding: 0 52px;
@@ -690,7 +648,6 @@
       .optin-grid,
       .feature-grid,
       .two-col-grid,
-      .video-grid,
       .screens-grid {
         grid-template-columns: 1fr;
       }
@@ -739,8 +696,7 @@
       .link-card p,
       .optin-card p,
       .feature-card p,
-      .text-card p,
-      .video-card p {
+      .text-card p {
         font-size: 15px;
       }
 
@@ -1089,46 +1045,6 @@
         <div class="info-note">
           Resumo: o app continua monitorando sempre, mas as notificações são reservadas
           para sinais com <strong>65%+</strong>.
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="acompanhamento-sinais">
-      <div class="section-card">
-        <div class="section-head">
-          <h2>Vídeos de acompanhamento dos sinais</h2>
-        </div>
-
-        <div class="video-grid">
-          <div class="video-card">
-            <div class="video-media">
-              <video controls playsinline preload="metadata" poster="dinamarca.jpeg">
-                <source src="dinamarca_goleada.mp4" type="video/mp4" />
-                Seu navegador não suporta vídeo em HTML5.
-              </video>
-            </div>
-            <h3>Exemplo de acompanhamento ao vivo</h3>
-            <p>
-              Este vídeo mostra o jogo da Dinamarca, com a aparição do sinal no app, a
-              leitura da partida e a forma como o acompanhamento acontece em tempo real
-              dentro da proposta do Fut Sinais.
-            </p>
-          </div>
-
-          <div class="video-card">
-            <div class="video-media">
-              <video controls playsinline preload="metadata" poster="logo2.png">
-                <source src="bolivia_suriname.mp4" type="video/mp4" />
-                Seu navegador não suporta vídeo em HTML5.
-              </video>
-            </div>
-            <h3>Exemplo de acompanhamento: Bolívia x Suriname</h3>
-            <p>
-              Este vídeo mostra o jogo entre Bolívia e Suriname como mais um exemplo
-              prático de acompanhamento dentro do app, permitindo visualizar o
-              comportamento do sinal e a evolução observada durante a partida.
-            </p>
-          </div>
         </div>
       </div>
     </section>
