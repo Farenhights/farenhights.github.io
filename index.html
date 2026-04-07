@@ -274,6 +274,34 @@
       box-shadow: 0 10px 22px rgba(118, 65, 255, 0.22);
     }
 
+    .btn-access {
+      min-height: 58px;
+      padding: 16px 24px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #7d2cff 0%, #5f27cd 100%);
+      color: #fff;
+      box-shadow: 0 14px 28px rgba(95, 39, 205, 0.28);
+      letter-spacing: -0.01em;
+    }
+
+    .btn-access:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(95, 39, 205, 0.34);
+    }
+
+    .summary-cta {
+      margin-top: 18px;
+    }
+
+    .summary-cta .btn,
+    .step-cta .btn {
+      width: 100%;
+    }
+
+    .step-cta {
+      margin-top: 14px;
+    }
+
     .btn-secondary {
       background: #f4efff;
       color: #5f27cd;
@@ -602,7 +630,6 @@
   <section class="hero">
     <div class="hero-content">
       <div class="hero-pill">Solicite acesso ao app</div>
-      <div class="hero-pill">Ganhe 20 dias de acesso VIP</div>
 
       <div class="hero-copy">
         <h1>Leitura esportiva ao vivo com sinais em tempo real.</h1>
@@ -634,8 +661,23 @@
       <aside class="summary-card" aria-label="Solicitação de acesso ao app">
         <h2>Solicitação de acesso ao app</h2>
         <p>
-          O processo continua igual ao fluxo antigo: primeiro solicitar a liberação,
-          depois entrar no teste e por fim instalar o app pela Play Store.
+          Preencha o formulário com o e-mail da sua conta Google. Depois disso,
+          você recebe por e-mail as instruções com os links para o opt-in e o download do app.
+        </p>
+
+        <div class="summary-cta">
+          <a
+            class="btn btn-access"
+            href="https://forms.gle/xB3Zgb7ncrDU18Fc6"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Solicitar acesso
+          </a>
+        </div>
+
+        <p class="mini-note">
+          Use no formulário o mesmo e-mail que você utiliza na Play Store do seu Android.
         </p>
 
         <div class="flow-list">
@@ -681,8 +723,7 @@
         <div class="section-head">
           <h2>Sobre o Fut Sinais</h2>
           <p>
-            O site agora apresenta o projeto de forma mais clara, visual e organizada,
-            mantendo o conteúdo principal da antiga página de acesso e deixando a navegação pronta para crescer.
+            Cadastre-se e receba 20 dias de acesso VIP para conhecer o app e acompanhar o radar ao vivo.
           </p>
         </div>
 
@@ -726,6 +767,21 @@
             <h3>Solicite seu acesso</h3>
             <p>
               Preencha o formulário com o e-mail da conta Google que você usa no Android e na Play Store.
+            </p>
+
+            <div class="step-cta">
+              <a
+                class="btn btn-access"
+                href="https://forms.gle/xB3Zgb7ncrDU18Fc6"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Solicitar acesso
+              </a>
+            </div>
+
+            <p class="mini-note">
+              Depois do cadastro, a Fut Sinais envia por e-mail o passo a passo com os links do opt-in e do download do app.
             </p>
           </div>
 
@@ -796,47 +852,6 @@
         <div class="warning">
           Importante: a ordem correta é <strong>primeiro confirmar no link web</strong> e
           <strong>só depois abrir o link do app na Play Store</strong>.
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="relatos">
-      <div class="section-card">
-        <div class="section-head">
-          <h2>Relatos em vídeo</h2>
-          <p>
-            A página de relatos continua separada para mostrar os vídeos já usados antes, agora dentro de uma navegação mais organizada.
-          </p>
-        </div>
-
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="eyebrow">Vídeos</div>
-            <h3>Conteúdo reunido em uma página própria</h3>
-            <p>
-              Os relatos deixam de ficar espalhados na home e ganham uma área própria para consulta mais fácil.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="eyebrow">Navegação</div>
-            <h3>Acesso rápido</h3>
-            <p>
-              O usuário consegue sair da página principal e abrir diretamente a seção de relatos quando quiser.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="eyebrow">Organização</div>
-            <h3>Estrutura pronta para crescer</h3>
-            <p>
-              O site fica preparado para receber novos relatos, novos blocos e mais conteúdo visual futuramente.
-            </p>
-          </div>
-        </div>
-
-        <div class="success-note">
-          A página de relatos continua disponível em <strong>relatos.html</strong>.
         </div>
       </div>
     </section>
